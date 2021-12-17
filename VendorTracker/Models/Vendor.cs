@@ -10,12 +10,18 @@ namespace VendorTracker.Models
     // add Orders list after creating the Order class and constructor
     // public List<Order> Orders { get; set; }
 
-    public Vendor(string vendorName)
+    public Vendor(string vendorName, string vendorDescription)
     {
       Name = vendorName;
+      Description = vendorDescription;
       _instances.Add(this);
       Id = _instances.Count;
       // Orders = new List<Order> { }; 
+    }
+
+    public static void ClearAll()
+    {
+      _instances.Clear();
     }
   }
 }
