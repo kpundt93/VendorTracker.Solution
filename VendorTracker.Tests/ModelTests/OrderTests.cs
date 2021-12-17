@@ -10,7 +10,7 @@ namespace VendorTracker.Tests
   {
     public void Dispose()
     {
-      Vendor.ClearAll();
+      Order.ClearAll();
     }
 
     [TestMethod]
@@ -62,6 +62,13 @@ namespace VendorTracker.Tests
       string date = "2021-12-17";
       Order newOrder = new Order(title, description, price, date);
       Assert.AreEqual(date, newOrder.Date);
+    }
+
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_OrderList()
+    {
+      List<Order> newList = new List<Order> { };
+      CollectionAssert.AreEqual(newList, Order.GetAll());
     }
   }
 }
