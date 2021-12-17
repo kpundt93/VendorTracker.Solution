@@ -48,6 +48,13 @@ namespace VendorTracker.Tests
     }
 
     [TestMethod]
+    public void GetAll_ReturnsEmptyList_VendorList()
+    {
+      List<Vendor> newList = new List<Vendor> { };
+      CollectionAssert.AreEqual(newList, Vendor.GetAll());
+    }
+
+    [TestMethod]
     public void GetAll_ReturnsAllVendorObjects_VendorList()
     {
       string name01 = "Test Vendor 1";
@@ -56,7 +63,7 @@ namespace VendorTracker.Tests
       string description02 = "Test description 2";
       Vendor newVendor1 = new Vendor(name01, description01);
       Vendor newVendor2 = new Vendor(name02, description02);
-      List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2};
+      List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
       CollectionAssert.AreEqual(newList, Vendor.GetAll());
     }
 
