@@ -94,7 +94,7 @@ namespace VendorTracker.Tests
       Vendor newVendor = new Vendor(name, vendorDescription);
       newVendor.AddOrder(newOrder);
       List<Order> result = newVendor.Orders;
-      CollectionAssert.AreEqual(newOrder, result);
+      CollectionAssert.AreEqual(newList, result);
     }
   }
 }
